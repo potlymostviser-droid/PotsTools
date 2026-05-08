@@ -25,3 +25,14 @@ python3 watchdog.py history api.target.com
 
 # See all pending alerts
 python3 watchdog.py alerts
+
+
+# TITE
+# Install
+sudo dnf install -y golang && go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest && export PATH=$PATH:~/go/bin
+
+# Generate targets.txt
+subfinder -d target.com -silent -o targets.txt
+
+# Multiple domains at once
+subfinder -d target.com -d target2.com -silent -o targets.txt
